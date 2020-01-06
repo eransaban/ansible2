@@ -1,0 +1,20 @@
+---
+- include_tasks: Redhat.yml
+  when: ansible_os_family == 'RedHat'
+
+- include_tasks: debian.yml
+  when: ansible_os_family == 'Debian'
+
+- include_vars: Redhat.yml
+  name: user
+  when: ansible_os_family == 'RedHat'
+
+- include_vars: Debian.yml
+  name: user
+  when: ansible_os_family == 'Debian'
+
+- user:
+   name: "{{ item }}"
+   groups: docker
+   append: yes
+  with_items: "{{ User }}"
