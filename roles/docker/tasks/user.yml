@@ -1,8 +1,0 @@
----
-- vars:
-  Debian:
-    -ubuntu
-    -saban
-  Redhat:
-    -ec2-user
-    -saban
