@@ -1,6 +1,5 @@
 - name: Install Docker
   hosts: all
   become: yes
-#  remote_user: saban
   roles:
     - docker
